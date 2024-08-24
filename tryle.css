@@ -1,0 +1,154 @@
+:root {
+    --color: rgb(59, 59, 59);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    box-sizing: border-box;
+    color: var(--color);
+}
+
+body {
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.clock-body {
+    height: 500px;
+    width: 500px;
+    border: 10px var(--color) solid;
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.hand {
+    background-color: var(--color);
+    height: 6px;
+    width: 200px;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform-origin: 100%;
+    transform: translateX(50%); 
+    transition: transform 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.dot{
+    background-color: var(--color);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+
+#hour {
+    width: 100px; 
+}
+
+#min {
+    width: 150px; 
+}
+
+#sec {
+    width: 200px; 
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 15px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    font-size: 0.8rem;
+    color: #ECDFCC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+
+
+@media (min-width : 400px) and (max-width : 800px){
+    .clock-body{
+        height: 400px;
+        width: 400px;
+    }
+    
+    #hour {
+        width: 80px; 
+    }
+    
+    #min {
+        width: 110px; 
+    }
+    
+    #sec {
+        width: 160px; 
+    }
+}
+
+.clock-body p{
+    position: absolute;
+    font-size: 3rem;
+}
+
+
+#p1{
+    top: 10px;
+}
+
+#p2{
+    right: 10px;
+}
+
+#p3{
+    bottom: 10px;
+}
+
+#p4{
+    left: 10px;
+}
+
+
+@media (max-width : 399px){
+    .clock-body{
+        height: 200px;
+        width: 200px;
+    }
+
+    #hour {
+        width: 40px; 
+    }
+    
+    #min {
+        width: 60px; 
+    }
+    
+    #sec {
+        width: 80px; 
+    }
+
+    .clock-body p {
+        font-size: 1.6rem;
+    }
+}
